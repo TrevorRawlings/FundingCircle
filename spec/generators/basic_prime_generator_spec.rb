@@ -21,7 +21,11 @@ describe FundingCircle::BasicPrimeGenerator do
         expect(FundingCircle::BasicPrimeGenerator.is_prime? number).to be true
       end
     end
-
   end
 
+  describe 'generate' do
+    it 'should generate the requested number of primes' do
+      expect(FundingCircle::BasicPrimeGenerator.generate 10).to eq PRIME_NUMBERS.first(10)
+    end
+  end
 end
