@@ -1,1 +1,1 @@
-require 'generators'
+require 'prime_numbers'

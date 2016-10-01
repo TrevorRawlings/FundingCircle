@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 
-#require_relative 'lib/formatter'
-#require_relative 'lib/calculate_products'
-require_relative 'lib/generate_prime_numbers'
+require_relative 'lib/prime_numbers.rb'
 
 def main
 
