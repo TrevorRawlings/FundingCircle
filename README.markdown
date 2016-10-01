@@ -1,4 +1,4 @@
-# Funding Circle Coding Challenge
+# Funding Circle Coding Challenge [![Build Status](https://travis-ci.org/TrevorRawlings/FundingCircle.png)](https://travis-ci.org/TrevorRawlings/FundingCircle)
 
 ## Objective
 
