@@ -8,12 +8,10 @@ describe FundingCircle::FormatTable do
     ASCII_ROW = /^(\d*)\s+(\d)\s+(\d)\s+(\d)\s+$/
 
     let(:products)   { FundingCircle::ProductsTable.new([1, 2, 3]) }
-    let(:cell_width) { 5 }
+    let(:cell_width) { (3 * 3).to_s.length + 1  }
 
     before :each do
-      output = ''
-      FundingCircle::FormatTable.to_ascii(products, cell_width, output)
-      @lines = output.split("\n")
+      @lines = FundingCircle::FormatTable.to_ascii(products).split("\n")
     end
 
     it 'writes a line for each row in the table' do
