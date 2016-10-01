@@ -1,7 +1,12 @@
+require 'forwardable.rb'
+
 module FundingCircle
   class ProductsTable
     include Enumerable
-    attr_reader :table
+    extend  Forwardable
+
+    attr_reader    :table
+    def_delegators :@table, :each, :flatten, :count
 
     def initialize(values)
       @table = Array.new(values.size + 1) do
@@ -14,31 +19,21 @@ module FundingCircle
       calculate_products values
     end
 
-    def each(&block)
-      @table.each(&block)
-    end
     alias each_row            each
     alias each_row_with_index each_with_index
 
-    def length
-      @table.length
-    end
-    alias row_count    length
-    alias column_count length
-
-    def []=(row, column, value)
-      @table[row][column]= value
-    end
+    alias row_count    count
+    alias column_count count
     
     def [](row, column)
       @table[row][column]
     end
 
-    def max_product
-      @table[self.length-1][self.length-1]
-    end
-
     private
+
+    def []=(row, column, value)
+      @table[row][column]= value
+    end
 
     def set_product(i, j, value)
       self[i + 1, j + 1]= value

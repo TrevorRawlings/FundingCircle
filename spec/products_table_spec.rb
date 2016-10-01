@@ -35,4 +35,10 @@ describe FundingCircle::ProductsTable do
                                      [  3, 3, 6, 9]]
     end
   end
+
+  it 'can flatten the contents of the table into a single array' do
+    table = FundingCircle::ProductsTable.new([1, 2])
+    expect(table.flatten).to eq [nil, 1, 2, 1, 1, 2, 2, 2, 4]
+  end
+
 end
