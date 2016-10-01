@@ -1,4 +1,8 @@
 language: ruby
 rvm:
+  - 1.9
   - 2.1
-script: bundle exec rspec spec
+  - 2.2
+script:
+  - bundle exec rspec spec
+  - bundle exec ./app.rb
