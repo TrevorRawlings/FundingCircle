@@ -11,9 +11,9 @@ end
 def benchmark(generator, repeat = 100)
   puts "Testing the #{generator.name} (each test is repeated #{repeat} times)\n\n"
 
-  puts ' ' * 25 + "total test time     time taken find each prime number"
+  puts ' ' * 25 + 'total test time'.ljust(20) + 'time taken find each prime number'
   [10, 50, 100, 500].each do |sequence_length|
-    time = Benchmark.realtime do |x|
+    time = Benchmark.realtime do
       repeat.times do
         generator.generate sequence_length
       end

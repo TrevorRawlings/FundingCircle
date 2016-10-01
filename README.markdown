@@ -1,4 +1,6 @@
-# Funding Circle Coding Challenge [![Build Status](https://travis-ci.org/TrevorRawlings/FundingCircle.png)](https://travis-ci.org/TrevorRawlings/FundingCircle)
+# Funding Circle Coding Challenge
+[![Build Status](https://travis-ci.org/TrevorRawlings/FundingCircle.png)](https://travis-ci.org/TrevorRawlings/FundingCircle)
+[![Code Climate](https://codeclimate.com/github/TrevorRawlings/FundingCircle/badges/gpa.svg)](https://codeclimate.com/github/TrevorRawlings/FundingCircle)
 
 ## Objective
 
