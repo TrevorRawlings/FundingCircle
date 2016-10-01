@@ -1,4 +1,4 @@
-module FundingCircle
+module PrimeNumbers
   class BasicPrimeGenerator
     class << self
       def is_prime?(number)

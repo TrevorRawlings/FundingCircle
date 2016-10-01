@@ -15,7 +15,7 @@ def main
 
   parser.parse!
 
-  FundingCircle::generate_table(options[:number])
+  PrimeNumbers::generate_table(options[:number])
 end
 
 main

@@ -1,6 +1,6 @@
 require 'forwardable.rb'
 
-module FundingCircle
+module PrimeNumbers
   class ProductsTable
     include Enumerable
     extend  Forwardable

@@ -1,4 +1,4 @@
-module FundingCircle
+module PrimeNumbers
   class FormatTable
     class << self
       # This is so simple that it probably doesn't need to be in its own class. I've separated it from
