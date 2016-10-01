@@ -4,8 +4,8 @@ describe FundingCircle::ProductsTable do
   describe 'initializer' do
     it 'constructs a table that is n+1 by n+1 when given an array of length n' do
       products = FundingCircle::ProductsTable.new([1, 2, 3])
-      expect(products.table.length).to eq 4
-      expect(products.table[0].length).to eq 4
+      expect(products.row_count).to eq 4
+      expect(products.column_count).to eq 4
     end
 
     it 'populates the first row with the supplied values' do

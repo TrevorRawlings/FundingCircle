@@ -3,10 +3,10 @@ module FundingCircle
     include Enumerable
     attr_reader :table
 
-    # I don't really understand why ruby Matrixes are not mutable. But since they are and I don't want to
-    # monkey patch I'm using an array of array's instead
     def initialize(values)
-      @table = Array.new(values.size + 1) { Array.new(values.size + 1) }
+      @table = Array.new(values.size + 1) do
+        Array.new(values.size + 1)
+      end
       values.each_with_index do |value, index|
         self[0, index + 1]= value
         self[index + 1, 0]= value
@@ -14,14 +14,17 @@ module FundingCircle
       calculate_products values
     end
 
-    def each_row(&block)
+    def each(&block)
       @table.each(&block)
     end
-    alias each each_row
+    alias each_row            each
+    alias each_row_with_index each_with_index
 
     def length
       @table.length
     end
+    alias row_count    length
+    alias column_count length
 
     def []=(row, column, value)
       @table[row][column]= value
