@@ -24,12 +24,12 @@ Thanks!
 
 ## Running
 ```
- ruby ./app.rb
+ ruby ./prime_numbers.rb
 ```
 
 ### Expected output
 ```
-~/projects/fundingcircle$ ./app.rb
+~/projects/fundingcircle$ ./prime_numbers.rb
     2   3   5   7   11  13  17  19  23  29
 2   4   6   10  14  22  26  34  38  46  58
 3   6   9   15  21  33  39  51  57  69  87
@@ -43,10 +43,14 @@ Thanks!
 29  58  87  145 203 319 377 493 551 667 841
 ```
 
-Usage: app.rb [options]
-    -n, --number number              Number of prime numbers
+### Options
+The size of the table can be controlled with the `-s` argument. 
 
-* The size of the table can be controlled with the `-n` command line argument.
+```
+prime_numbers.rb [options]
+    -s, --size number              Size of the table
+```
+
 
 
 ### Unit tests
@@ -54,5 +58,41 @@ Usage: app.rb [options]
 bundle install; bundle exec rspec
 ```
 
-### Performance tests
-`./scripts/benchmark.rb`
+## Implemention of the prime number generator
+Two generators have been implemented. The first and simplest generator tests each number in turn by
+deviding it by all previous numbers. This is clearly an inefficent approach but for sequences less than 10
+it is not significantly slower than the alternative SieveOfEratosthenes approach.
+
+If this program is only intended for generating relative small tables (where n < 100) I consider the simple
+approach a good compromise.  If 500 or more prime numbers are required then simple approach begins to take a
+noticable length of time and the slightly more complex Sieve of Eratosthenes preforms noticable better (see the
+performance tests below).
+
+## Performance tests
+The scripts directory contains `benchmark.rb` that tests the time taken to generate the first 10,
+50, 100 and 500 prime numbers.  On my machine it generates the following output:
+```
+allin@trevor-dev:~/projects/fundingcircle$ ./scripts/benchmark.rb
+Testing the PrimeNumbers::SimplePrimeGenerator (each test is repeated 100 times)
+
+                         total test time     time taken find each prime number
+first 10 prime numbers   0.00165             1.5e-05
+first 50 prime numbers   0.0514              0.000342
+first 100 prime numbers  0.176               0.000882
+first 500 prime numbers  5.52                0.00921
+
+Testing the PrimeNumbers::SieveOfEratosthenes (each test is repeated 100 times)
+
+                         total test time     time taken find each prime number
+first 10 prime numbers   0.00141             1.28e-05
+first 50 prime numbers   0.00953             6.35e-05
+first 100 prime numbers  0.0274              0.000137
+first 500 prime numbers  0.153               0.000254
+```
+When the application is asked to generate 10 prime numbers the simple 
+prime number generator executes so quickly that the more complicated 
+implementation doesn't seem nessicary. For sequences of 500 or more 
+SieveOfEratosthenes performs noticably better.
+
+
+

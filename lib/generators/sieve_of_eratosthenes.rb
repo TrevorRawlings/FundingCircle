@@ -1,28 +1,31 @@
-# TODO: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-
 module PrimeNumbers
   class SieveOfEratosthenes
     class << self
       def generate(count)
         prime_numbers = sieve(estimate_n_th_prime count)
-        #TODO throw an error id prime_numbers.count < count?
-
+        if prime_numbers.count < count
+          raise "Expected sieve to have found at least #{count} prime numbers"
+        end
         prime_numbers.first(count)
       end
 
-      # Exposed to make testing easier
+      # Method is public to make testing easier. An alternative would be to leave it private but then use
+      # SieveOfEratosthenes.send(:rossers_theorem, n) to call it from the rspec test
       def rossers_theorem(n)
         n * (Math.log(n) + Math.log( Math.log( n ) ))
       end
 
       private
 
-      # The accurate estimate given
-      # Based largely on this stackover flow discussion: http://stackoverflow.com/a/1069023
+      # Wikipedia lists lots of ways of estimating the size of the nth prime number.
       # https://en.wikipedia.org/wiki/Prime_number_theorem#Approximations%5Ffor%5Fthe%5Fnth%5Fprime%5Fnumber
-      # When the accurate e
       #
-      # Lots of possible ways to make the estimte more accurate, although the this
+      # A more accurate estimate prevents the sieve from doing unnecessary work but complicates the code and
+      # the runtime overhead of more complex estimation logic also needs to be considered.
+      #
+      # I've implemented the relatively simple Rosser's theorem but this stackoverflow post lists alternatives:
+      # http://stackoverflow.com/a/1069023
+      #
       def estimate_n_th_prime(n)
          return 13 if n < 6
          rossers_theorem(n).ceil

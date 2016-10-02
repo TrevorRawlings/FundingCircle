@@ -36,7 +36,7 @@ def main()
   end
   parser.parse!
 
-  benchmark(PrimeNumbers::BasicPrimeGenerator, options[:iterations])
+  benchmark(PrimeNumbers::SimplePrimeGenerator, options[:iterations])
   benchmark(PrimeNumbers::SieveOfEratosthenes, options[:iterations])
 end
 

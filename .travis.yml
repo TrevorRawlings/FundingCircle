@@ -5,7 +5,7 @@ rvm:
   - 2.2
 script:
   - bundle exec rspec spec
-  - bundle exec ./app.rb
+  - bundle exec ./prime_numbers.rb
   - bundle exec ./scripts/benchmark.rb -i 1
 addons:
   code_climate:
