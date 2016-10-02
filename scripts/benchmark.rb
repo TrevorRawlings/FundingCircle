@@ -8,7 +8,7 @@ def format_time(time)
   sprintf('%-20.3g', time)
 end
 
-def benchmark(generator, repeat = 100)
+def benchmark(generator, repeat)
   puts "Testing the #{generator.name} (each test is repeated #{repeat} times)\n\n"
 
   puts ' ' * 25 + 'total test time'.ljust(20) + 'time taken find each prime number'
@@ -22,12 +22,22 @@ def benchmark(generator, repeat = 100)
     time_for_each_prime_number = time/(sequence_length + repeat)
     puts "first #{sequence_length} prime numbers".ljust(25) + format_time(time) + format_time(time_for_each_prime_number)
   end
+  puts ''
 end
 
-benchmark(PrimeNumbers::BasicPrimeGenerator)
+def main()
+  options = { :iterations => 100 }
 
-#
-# require 'pry'
-# binding.pry
-#
-# puts 'hello'
+  parser = OptionParser.new do|opts|
+    opts.banner = "Usage: ruby benchmark.rb [options]"
+    opts.on('-i', '--iterations number', 'Number of times to repeat each test') do |number|
+      options[:iterations] = number.to_i;
+    end
+  end
+  parser.parse!
+
+  benchmark(PrimeNumbers::BasicPrimeGenerator, options[:iterations])
+  benchmark(PrimeNumbers::SieveOfEratosthenes, options[:iterations])
+end
+
+main()

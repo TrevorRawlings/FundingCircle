@@ -1,4 +1,5 @@
 require_relative 'generators/basic_prime_generator.rb'
+require_relative 'generators/sieve_of_eratosthenes.rb'
 require_relative 'products_table.rb'
 require_relative 'format_table.rb'
 

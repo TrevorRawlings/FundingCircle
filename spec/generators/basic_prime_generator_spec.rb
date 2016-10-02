@@ -1,8 +1,6 @@
 require_relative '../spec_helper'
 
 describe PrimeNumbers::BasicPrimeGenerator do
-  PRIME_NUMBERS = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
-
   describe 'is_prime?' do
     it 'returns false when given a negative number' do
       (-20..-1).each do |number|
