@@ -104,12 +104,15 @@ SieveOfEratosthenes performs noticeably better.
 ## Packaging
 Prime_numbers has been packaged using [traveling-ruby](http://phusion.github.io/traveling-ruby/)
 
-Packages are available for linux, linux-64 and OSX, although only linux-64
-has been tested (sorry, I don't have easy access to the other environments).
+Packages are available for [linux](https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-linux-x86.tar.gz?raw=true),
+[linux-64](https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-linux-x86_64.tar.gz?raw=true) 
+and [OSX](https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-osx.tar.gz?raw=true), 
+although only linux-64 has been tested (sorry, I don't have easy access 
+to the other environments).
  
 To run: Download the above package, extract it and run `prime_numbers`:
 ```bash
-wget prime_numbers-1.0.0-linux-x86_64
+wget https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-linux-x86_64.tar.gz?raw=true
 ...
 tar xzf prime_numbers-1.0.0-linux-x86_64.tar.gz
 cd prime_numbers-1.0.0-linux-x86_64
