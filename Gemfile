@@ -1,4 +1,4 @@
 source 'http://rubygems.org'
 
 gem 'rspec', group: :test
-gem "codeclimate-test-reporter", group: :test, require: nil, :platform => :ruby_20
+gem "codeclimate-test-reporter", group: :test, require: nil, :platform => :ruby_21

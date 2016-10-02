@@ -51,26 +51,31 @@ prime_numbers.rb [options]
     -s, --size number              Size of the table
 ```
 
-
-
-### Unit tests
+## Unit tests
+Rspec tests are in the [./spec](https://github.com/TrevorRawlings/FundingCircle/tree/master/spec)
+directory. Code coverage is available on [codeclimate](https://codeclimate.com/github/TrevorRawlings/FundingCircle/coverage)
 ```
 bundle install; bundle exec rspec
 ```
 
-## Implemention of the prime number generator
-Two generators have been implemented. The first and simplest generator tests each number in turn by
-deviding it by all previous numbers. This is clearly an inefficent approach but for sequences less than 10
-it is not significantly slower than the alternative SieveOfEratosthenes approach.
+## Implementations of the prime number generator
+Two generators have been implemented. The first and simplest generator 
+tests each number in turn by dividing it by all previous numbers. This 
+is clearly an inefficient approach but for sequences less than 10 it is 
+not significantly slower than the alternative [SieveOfEratosthenes](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/sieve_of_eratosthenes.rb)
+approach.
 
-If this program is only intended for generating relative small tables (where n < 100) I consider the simple
-approach a good compromise.  If 500 or more prime numbers are required then simple approach begins to take a
-noticable length of time and the slightly more complex Sieve of Eratosthenes preforms noticable better (see the
-performance tests below).
+If this program is only intended for generating relative small tables 
+(where n < 100) I consider the [simple approach](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/simple_prime_generator.rb) 
+a good compromise. If 500 or more prime numbers are required then the 
+simple approach begins to take a noticeable length of time and the 
+slightly more complex Sieve of Eratosthenes preforms noticeably better 
+(see the performance tests below).
 
 ## Performance tests
-The scripts directory contains `benchmark.rb` that tests the time taken to generate the first 10,
-50, 100 and 500 prime numbers.  On my machine it generates the following output:
+The scripts directory contains [benchmark.rb](https://github.com/TrevorRawlings/FundingCircle/blob/master/scripts/benchmark.rb)
+that tests the time taken to generate the first 10, 50, 100 and 500 prime
+ numbers. On my machine it generates the following output:
 ```
 allin@trevor-dev:~/projects/fundingcircle$ ./scripts/benchmark.rb
 Testing the PrimeNumbers::SimplePrimeGenerator (each test is repeated 100 times)
@@ -89,10 +94,9 @@ first 50 prime numbers   0.00953             6.35e-05
 first 100 prime numbers  0.0274              0.000137
 first 500 prime numbers  0.153               0.000254
 ```
+
 When the application is asked to generate 10 prime numbers the simple 
 prime number generator executes so quickly that the more complicated 
-implementation doesn't seem nessicary. For sequences of 500 or more 
-SieveOfEratosthenes performs noticably better.
-
-
+implementation doesn't seem necessary. For sequences of 500 or more 
+SieveOfEratosthenes performs noticeably better.
 

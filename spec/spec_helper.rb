@@ -1,5 +1,5 @@
 begin
-  require "codeclimate-test-reporter"
+  require 'codeclimate-test-reporter'
   CodeClimate::TestReporter.start
 rescue LoadError
   puts 'Unable to load the codeclimate-test-reporter gem'
