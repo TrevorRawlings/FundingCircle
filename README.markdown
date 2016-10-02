@@ -1,6 +1,7 @@
 # Funding Circle Coding Challenge
 [![Build Status](https://travis-ci.org/TrevorRawlings/FundingCircle.png)](https://travis-ci.org/TrevorRawlings/FundingCircle)
 [![Code Climate](https://codeclimate.com/github/TrevorRawlings/FundingCircle/badges/gpa.svg)](https://codeclimate.com/github/TrevorRawlings/FundingCircle)
+[![Test Coverage](https://codeclimate.com/github/TrevorRawlings/FundingCircle/badges/coverage.svg)](https://codeclimate.com/github/TrevorRawlings/FundingCircle/coverage)
 
 ## Objective
 
@@ -16,7 +17,7 @@ containing the product of the primes for the corresponding row and column.
 * Write tests. Try to demonstrate TDD/BDD.
 * If you’re using external dependencies please specify those dependencies and how to
 install them.
-* Please package your code , OR include running instructions.
+* Please package your code, OR include running instructions.
 When you’re done
 Put your code on GitHub or email us a zip/tarball.
 Thanks!
@@ -51,7 +52,7 @@ prime_numbers.rb [options]
     -s, --size number              Size of the table
 ```
 
-## Unit tests
+## Tests
 Rspec tests are in the [./spec](https://github.com/TrevorRawlings/FundingCircle/tree/master/spec)
 directory. Code coverage is available on [codeclimate](https://codeclimate.com/github/TrevorRawlings/FundingCircle/coverage)
 ```
@@ -65,7 +66,7 @@ is clearly an inefficient approach but for sequences less than 10 it is
 not significantly slower than the alternative [SieveOfEratosthenes](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/sieve_of_eratosthenes.rb)
 approach.
 
-If this program is only intended for generating relative small tables 
+If this program is only intended for generating relatively small tables 
 (where n < 100) I consider the [simple approach](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/simple_prime_generator.rb) 
 a good compromise. If 500 or more prime numbers are required then the 
 simple approach begins to take a noticeable length of time and the 
@@ -100,3 +101,17 @@ prime number generator executes so quickly that the more complicated
 implementation doesn't seem necessary. For sequences of 500 or more 
 SieveOfEratosthenes performs noticeably better.
 
+## Packaging
+Prime_numbers has been packaged using [traveling-ruby](http://phusion.github.io/traveling-ruby/)
+
+Packages are available for linux, linux-64 and OSX, although only linux-64
+has been tested (sorry, I don't have easy access to the other environments).
+ 
+To run: Download the above package, extract it and run `prime_numbers`:
+```bash
+wget prime_numbers-1.0.0-linux-x86_64
+...
+tar xzf prime_numbers-1.0.0-linux-x86_64.tar.gz
+cd prime_numbers-1.0.0-linux-x86_64
+./prime_numbers
+```

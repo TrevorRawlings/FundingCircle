@@ -1,2 +1,5 @@
 Gemfile.lock
 coverage/*
+packaging/traveling-ruby-20150210-2.1.5-linux-x86.tar.gz
+packaging/traveling-ruby-20150210-2.1.5-linux-x86_64.tar.gz
+packaging/traveling-ruby-20150210-2.1.5-osx.tar.gz

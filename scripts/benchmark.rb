@@ -3,7 +3,6 @@ require 'benchmark'
 require 'optparse'
 require_relative '../lib/prime_numbers.rb'
 
-
 def format_time(time)
   sprintf('%-20.3g', time)
 end
@@ -30,8 +29,8 @@ def main()
 
   parser = OptionParser.new do|opts|
     opts.banner = "Usage: ruby benchmark.rb [options]"
-    opts.on('-i', '--iterations number', 'Number of times to repeat each test') do |number|
-      options[:iterations] = number.to_i;
+    opts.on('-i', '--iterations number', 'Number of times to repeat each test') do |iterations|
+      options[:iterations] = iterations.to_i;
     end
   end
   parser.parse!
