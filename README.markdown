@@ -125,7 +125,7 @@ To run: Download the above package, extract it and run `prime_numbers`:
 ```bash
 wget https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-linux-x86_64.tar.gz?raw=true
 ...
-tar xzf prime_numbers-1.0.0-linux-x86_64.tar.gz
+tar xzf prime_numbers-1.0.0-linux-x86_64.tar.gz?raw=true
 cd prime_numbers-1.0.0-linux-x86_64
 ./prime_numbers
 ```
