@@ -69,7 +69,7 @@ approach.
 If this program is only intended for generating relatively small tables 
 (where n < 100) I consider the [simple approach](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/simple_prime_generator.rb) 
 a good compromise. If 500 or more prime numbers are required then the 
-simple approach begins to take a noticeable length of time and the 
+simple approach takes a noticeable length of time and the 
 slightly more complex Sieve of Eratosthenes preforms noticeably better 
 (see the performance tests below).
 
@@ -97,9 +97,8 @@ first 500 prime numbers  0.153               0.000254
 ```
 
 When the application is asked to generate 10 prime numbers the simple 
-prime number generator executes so quickly that the more complicated 
-implementation doesn't seem necessary. For sequences of 500 or more 
-SieveOfEratosthenes performs noticeably better.
+implementation executes so quickly that the more complicated 
+SieveOfEratosthenes doesn't seem necessary.
 
 When asked to generate a very large table the amount of memory used by the 
 [sieve](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/sieve_of_eratosthenes.rb#L35)
@@ -112,9 +111,6 @@ The full list of primes is needed before the first line of the table can
 be written but memory consumption would be reduced if each line of the
 table was written to stdout as soon as the products for that row had 
 been calculated.  
-
-## Memory usage
-When asked to 
 
 ## Packaging
 PrimeNumbers has been packaged using [traveling-ruby](http://phusion.github.io/traveling-ruby/).
