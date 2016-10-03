@@ -101,6 +101,21 @@ prime number generator executes so quickly that the more complicated
 implementation doesn't seem necessary. For sequences of 500 or more 
 SieveOfEratosthenes performs noticeably better.
 
+When asked to generate a very large table the amount of memory used by the 
+[sieve](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/sieve_of_eratosthenes.rb#L35)
+and by the [ProductsTable](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/products_table.rb#L12-L14)
+would become an issue. 
+ 
+An [incremental sieve](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Incremental_sieve)
+would reduce the amount of memory required when generating the primes. 
+The full list of primes is needed before the first line of the table can 
+be written but memory consumption would be reduced if each line of the
+table was written to stdout as soon as the products for that row had 
+been calculated.  
+
+## Memory usage
+When asked to 
+
 ## Packaging
 PrimeNumbers has been packaged using [traveling-ruby](http://phusion.github.io/traveling-ruby/).
 
