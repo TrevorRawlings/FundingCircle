@@ -70,7 +70,7 @@ If this program is only intended for generating relatively small tables
 (where n < 100) I consider the [simple approach](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/simple_prime_generator.rb) 
 a good compromise. If 500 or more prime numbers are required then the 
 simple approach takes a noticeable length of time and the 
-slightly more complex Sieve of Eratosthenes preforms noticeably better 
+slightly more complex Sieve of Eratosthenes preforms better 
 (see the performance tests below).
 
 ## Performance tests
