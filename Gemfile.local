@@ -1,0 +1,7 @@
+# Execute with 'BUNDLE_GEMFILE=Gemfile.local bundle install'
+eval File.read('Gemfile')
+
+gem "pry"
+gem 'pry-stack_explorer'
+gem 'pry-byebug'
+gem 'rb-readline'

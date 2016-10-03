@@ -1,0 +1,1 @@
+BUNDLE_GEMFILE=Gemfile.local bundle exec ./scripts/pry-console "$@"

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'pry'
+require_relative '../lib/prime_numbers.rb'
+
+
+ARGV.reject!{ true }
+
+binding.pry
+puts "welcome"
