@@ -3,7 +3,6 @@ require_relative 'spec_helper'
 describe PrimeNumbers::FormatTable do
   describe 'to_ascii' do
 
-
     let(:products)   { PrimeNumbers::ProductsTable.new([1, 2, 3]) }
     let(:cell_width) { (3 * 3).to_s.length + 1  }
 

@@ -1,4 +1,4 @@
-# Funding Circle Coding Challenge
+# PrimeNumbers
 [![Build Status](https://travis-ci.org/TrevorRawlings/FundingCircle.png)](https://travis-ci.org/TrevorRawlings/FundingCircle)
 [![Code Climate](https://codeclimate.com/github/TrevorRawlings/FundingCircle/badges/gpa.svg)](https://codeclimate.com/github/TrevorRawlings/FundingCircle)
 [![Test Coverage](https://codeclimate.com/github/TrevorRawlings/FundingCircle/badges/coverage.svg)](https://codeclimate.com/github/TrevorRawlings/FundingCircle/coverage)
@@ -62,7 +62,7 @@ bundle install; bundle exec rspec
 ## Implementations of the prime number generator
 Two generators have been implemented. The first and simplest generator 
 tests each number in turn by dividing it by all previous numbers. This 
-is clearly an inefficient approach but for sequences less than 10 it is 
+is clearly efficient but for sequences of less than 10 it is 
 not significantly slower than the alternative [SieveOfEratosthenes](https://github.com/TrevorRawlings/FundingCircle/blob/master/lib/generators/sieve_of_eratosthenes.rb)
 approach.
 
@@ -102,13 +102,13 @@ implementation doesn't seem necessary. For sequences of 500 or more
 SieveOfEratosthenes performs noticeably better.
 
 ## Packaging
-Prime_numbers has been packaged using [traveling-ruby](http://phusion.github.io/traveling-ruby/)
+PrimeNumbers has been packaged using [traveling-ruby](http://phusion.github.io/traveling-ruby/).
 
 Packages are available for [linux](https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-linux-x86.tar.gz?raw=true),
 [linux-64](https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-linux-x86_64.tar.gz?raw=true) 
 and [OSX](https://github.com/TrevorRawlings/FundingCircle/blob/master/prime_numbers-1.0.0-osx.tar.gz?raw=true), 
-although only linux-64 has been tested (sorry, I don't have easy access 
-to the other environments).
+although only linux-64 package has been tested (sorry, I don't have easy 
+access to the other environments).
  
 To run: Download the above package, extract it and run `prime_numbers`:
 ```bash

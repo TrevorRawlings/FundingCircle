@@ -7,6 +7,10 @@ rescue LoadError
   # https://travis-ci.org/TrevorRawlings/FundingCircle/jobs/164352072
 end
 
+RSpec.configure do |config|
+  config.mock_with :mocha
+end
+
 require 'prime_numbers'
 
 PRIME_NUMBERS = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]

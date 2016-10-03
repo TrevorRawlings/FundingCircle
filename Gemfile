@@ -1,4 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rspec', group: :test
-gem "codeclimate-test-reporter", group: :test, require: nil, :platform => :ruby_21
+group :test do
+  gem 'rspec', '~> 3.5.0'
+  gem 'mocha', '~> 1.1.0'
+  gem 'codeclimate-test-reporter', '~> 0.6.0', require: nil, :platform => :ruby_21
+end
